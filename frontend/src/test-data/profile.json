@@ -1,0 +1,16 @@
+[ {
+    "UserName": "UserName",
+    "Address": "Address",
+    "Email": "Email ",
+    "AccountBalance": 210.3,
+    "roles": [
+    {
+        "title": "Web programmer",
+        "description": "In charge of developing web services using the framework Django used for a e-commerce web site",
+        "startDate": "2012-11-01",
+        "endDate": "2013-03-01",
+        "location": "Caracas, Venezuela"
+    }
+    ]
+}
+]
