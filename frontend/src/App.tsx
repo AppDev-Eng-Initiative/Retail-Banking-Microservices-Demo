@@ -7,7 +7,8 @@ import Profile from "./views/profile";
 import Transfer from "./views/transfer";
 import Transactions from "./views/transactions";
 import { slide as Menu } from 'react-burger-menu';
-import styles from "./components/Menu"
+import menuStyles from "./components/Menu"
+import profileStyles from "./components/Profile"
 
 /* Style Sheet */
 import "./styles/app.css";
@@ -16,9 +17,16 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
-        <Menu styles={ styles }>
-          <a id="Transfer History" className="menu-item" href="/">Transfer History</a>
-          <a id="Transaction History" className="menu-item" href="/about">Transaction History</a>
+        <Menu disableAutoFocus styles={ menuStyles }>
+          <a id="Transfer History" className="menu-item" href="/">Transfer</a>
+          <a id="Transaction History" className="menu-item" href="/about">Transaction</a>
+        </Menu>
+
+        <Menu right customBurgerIcon={ <img width="20" src={require("./user.svg")} alt="Profile"/> } styles={ profileStyles }>
+          <a id="Transfer History" className="menu-item" href="/">Username</a>
+          <a id="Transaction History" className="menu-item" href="/about">Email</a>
+          <a id="Transaction History" className="menu-item" href="/about">Account balance</a>
+          <a id="Transaction History" className="menu-item" href="/about">Address</a>
         </Menu>
 
         <Switch>

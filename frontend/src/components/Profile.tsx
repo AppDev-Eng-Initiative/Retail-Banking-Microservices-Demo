@@ -1,10 +1,14 @@
 var styles = {
     bmBurgerButton: {
       position: 'fixed',
-      width: '36px',
-      height: '30px',
-      left: '36px',
-      top: '36px'
+      width: '50px',
+      height: '50px',
+      right: '36px',
+      top: '30px',
+    },
+    bmIcon: {
+        width: '50px',
+        height: '50px',
     },
     bmBurgerBars: {
       background: '#373a47'
