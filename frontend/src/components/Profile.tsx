@@ -4,7 +4,7 @@ var styles = {
       width: '50px',
       height: '50px',
       right: '36px',
-      top: '30px',
+      top: '15px',
     },
     bmIcon: {
         width: '50px',
