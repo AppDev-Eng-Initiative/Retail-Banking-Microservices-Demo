@@ -1,13 +1,6 @@
 import React from "react";
 import {Button, Modal, ButtonToolbar} from 'react-bootstrap'
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import {makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core';
 
 const useStyles = makeStyles({
   table: {
@@ -74,6 +67,8 @@ const rows = [
   createData('Eclair', 262, "credit", "2019/2/4", 6.0),
   createData('Cupcake', 305, "dedit", "2019/2/4", 4.3),
   createData('Gingerbread', 356, "credit", "2019/2/4", 3.9),
+  createData('Frozen yoghurt', 159, "credit", "2019/2/4", 4.0),
+  createData('Ice cream sandwich', 237, "dedit", "2019/2/4", 4.3)
 ];
 
 const Transactions: React.FC = () => {

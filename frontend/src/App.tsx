@@ -21,8 +21,8 @@ const App: React.FC = () => {
         <Header></Header>
         <Menu disableAutoFocus styles={ menuStyles }>
         <a id="Transfer History" className="menu-item" href="/">Home</a>
-          <a id="Transfer History" className="menu-item" href="/">Transfer</a>
-          <a id="Transaction History" className="menu-item" href="/about">Transaction</a>
+          <a id="Transfer History" className="menu-item" href="/transfer">Transfer</a>
+          <a id="Transaction History" className="menu-item" href="/transactions">Transaction</a>
         </Menu>
 
         <Menu right customBurgerIcon={ <img width="20" src={require("./img/user.svg")} alt="Profile"/> } styles={ profileStyles }>
@@ -35,9 +35,6 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/profile">
-            <Profile />
           </Route>
           <Route path="/transfer">
             <Transfer />
