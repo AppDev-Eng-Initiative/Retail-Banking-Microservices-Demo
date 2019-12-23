@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 /* Import Views for Retail Banking App */
 import Home from "./views/home";
-import Profile from "./views/profile";
 import Transfer from "./views/transfer";
 import Transactions from "./views/transactions";
 import { slide as Menu } from 'react-burger-menu';
@@ -18,11 +17,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
+
         <Header></Header>
+        
         <Menu disableAutoFocus styles={ menuStyles }>
-        <a id="Transfer History" className="menu-item" href="/">Home</a>
+          <a id="Transfer History" className="menu-item" href="/">Home</a>
           <a id="Transfer History" className="menu-item" href="/transfer">Transfer</a>
-          <a id="Transaction History" className="menu-item" href="/transactions">Transaction</a>
+          <a id="Transaction History" className="menu-item" href="/transactions">Transactions</a>
         </Menu>
 
         <Menu right customBurgerIcon={ <img width="20" src={require("./img/user.svg")} alt="Profile"/> } styles={ profileStyles }>

@@ -1,17 +1,25 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Header() {
     return (
-        <header style={headerStyle}>
+        <div style={headerStyle}>
             <h1>Banking App</h1>
-        </header>
+            <Link style={linkStyle} to="/">Home</Link> | <Link style={linkStyle} to="/about">About</Link>
+        </div>
     )
 }
 
 const headerStyle = {
+    position: 'sticky',
+    top: '0',
     background: '#333',
     color: '#fff',
-    padding: '15px'
+    padding: '15px',
+} as React.CSSProperties;
+
+const linkStyle = {
+    color: '#fff'
 }
 
 

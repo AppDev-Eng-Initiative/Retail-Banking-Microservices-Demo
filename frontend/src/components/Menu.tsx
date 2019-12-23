@@ -4,7 +4,7 @@ var styles = {
       width: '36px',
       height: '30px',
       left: '36px',
-      top: '25px'
+      top: '38px'
     },
     bmBurgerBars: {
       background: '#fff'
