@@ -23,7 +23,7 @@ const container={
 }
 
 const item={
-  backgroundColor: '#373a47',
+  backgroundColor: '#4285F4',
   color: '#fff',
   border: '1px solid #fff',
   margin: '20px',

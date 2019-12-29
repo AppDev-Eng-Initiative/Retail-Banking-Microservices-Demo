@@ -21,14 +21,14 @@ var styles = {
       width: '24px'
     },
     bmCross: {
-      background: '#bdc3c7'
+      background: '#fff'
     },
     bmMenuWrap: {
       position: 'fixed',
       height: '100%'
     },
     bmMenu: {
-      background: '#373a47',
+      background: '#F4B400',
       padding: '2.5em 1.5em 0',
       fontSize: '1.35em'
     },
@@ -36,11 +36,11 @@ var styles = {
       fill: '#373a47'
     },
     bmItemList: {
-      color: '#b8b7ad',
+      color: '#fff',
       padding: '0.8em'
     },
     bmItem: {
-      color: '#b8b7ad',
+      color: '#fff',
       padding: '0.8em',
       display: 'inline-block',
       textDecoration: 'none'

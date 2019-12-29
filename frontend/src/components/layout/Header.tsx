@@ -13,7 +13,7 @@ function Header() {
 const headerStyle = {
     position: 'sticky',
     top: '0',
-    background: '#333',
+    background: '#4285F4',
     color: '#fff',
     padding: '15px',
 } as React.CSSProperties;
