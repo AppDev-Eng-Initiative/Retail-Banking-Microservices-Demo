@@ -64,10 +64,11 @@ function MyVerticallyCenteredModal(props) {
 const Transfer: React.FC = () => {
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <div>
+    <div style={{position: 'relative', height: '100%'}}>
       <h1>Transfer</h1>
 
-      <Fab color="primary" aria-label="add" style={{bottom: '0px'}}>
+      <Fab color="primary" aria-label="add" style={{position: 'absolute', right: '0px',
+                bottom: '0px'}}>
         {/* <AddIcon onClick={() => setModalShow(true)}></AddIcon> */}
         <AddIcon onClick={() => setModalShow(true)}></AddIcon>
         <MyVerticallyCenteredModal

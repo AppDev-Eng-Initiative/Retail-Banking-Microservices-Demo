@@ -109,13 +109,13 @@ const Transactions: React.FC = () => {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
-    <div>
+    <div style={{position: 'relative', height: '100%'}}>
       <h1>Transactions</h1>
       <p>Transaction 1</p>
       <p>Transaction 2</p>
       <p>Transaction 3</p>
-      <Fab color="primary" aria-label="add" style={{bottom: '0px'}}>
-        {/* <AddIcon onClick={() => setModalShow(true)}></AddIcon> */}
+      <Fab color="primary" aria-label="add" style={{position: 'absolute', right: '0px',
+                bottom: '0px'}}>
         <AddIcon onClick={() => setModalShow(true)}></AddIcon>
         <MyVerticallyCenteredModal
             show={modalShow}

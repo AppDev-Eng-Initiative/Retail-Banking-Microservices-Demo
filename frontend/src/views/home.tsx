@@ -18,8 +18,7 @@ const container={
   gridTemplateColumns: "repeat(3, 1fr)", 
   gridTemplateRows: '70vh',
   gridGap: 20,
-  marginTop: '90px',
-  marginBottom: '90px'
+  marginTop: '40px',
 }
 
 const item={
@@ -29,7 +28,8 @@ const item={
   margin: '20px',
   padding: '20px',
   fontSize: '15px',
-  borderRadius: '10px'
+  borderRadius: '10px',
+  height: '100%'
 }
 
 export default Home;
