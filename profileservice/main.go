@@ -6,20 +6,14 @@ import (
 	"net/http"
 	"os"
 
-	//"io"
 	"log"
-	//"fmt"
 	"strings"
-	//"path"
 	"github.com/gorilla/mux"
-	//"github.com/gorilla/handlers"
 	"strconv"
 
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/option"
 
-	//"google.golang.org/appengine"
-	//"google.golang.org/appengine/datastore"
 	"cloud.google.com/go/datastore"
 )
 
@@ -53,7 +47,6 @@ func main() {
 	}
 
 	registerHandlers()
-	//appengine.Main()
 }
 
 func registerHandlers() {
@@ -68,7 +61,6 @@ func registerHandlers() {
 
 // createHandler adds a user to the database.
 func createHandler(w http.ResponseWriter, r *http.Request) {
-	//ctx := appengine.NewContext(r)
 	ctx := context.Background()
 	var user User
 	err := json.NewDecoder(r.Body).Decode(&user)
@@ -85,11 +77,9 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func listHandler(w http.ResponseWriter, r *http.Request) {
-	//ctx := appengine.NewContext(r)
 	ctx := context.Background()
 	user := make([]*User, 0)
 	q := datastore.NewQuery("User")
-	// have to use a slice to save the result? or have to use getall?
 	if _, err := dsClient.GetAll(ctx, q, &user); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -99,7 +89,6 @@ func listHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func readHandler(w http.ResponseWriter, r *http.Request) {
-	//ctx := appengine.NewContext(r)
 	ctx := context.Background()
 	id, err := strconv.Atoi(strings.TrimPrefix(r.URL.Path, "/user/"))
 	if err != nil {
@@ -109,7 +98,6 @@ func readHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	user := make([]*User, 0)
 	q := datastore.NewQuery("User").Filter("UserID =", id)
-	// have to use a slice to save the result? or have to use getall?
 	if _, err := dsClient.GetAll(ctx, q, &user); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -119,7 +107,6 @@ func readHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteHandler(w http.ResponseWriter, r *http.Request) {
-	//ctx := appengine.NewContext(r)
 	ctx := context.Background()
 	id, err := strconv.Atoi(strings.TrimPrefix(r.URL.Path, "/user/"))
 	if err != nil {
@@ -129,7 +116,6 @@ func deleteHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	user := make([]*User, 0)
 	q := datastore.NewQuery("User").Filter("UserID =", id)
-	// have to use a slice to save the result? or have to use getall?
 	keys, err := dsClient.GetAll(ctx, q, &user)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -144,7 +130,6 @@ func deleteHandler(w http.ResponseWriter, r *http.Request) {
 
 // createHandler adds a user to the database.
 func updateHandler(w http.ResponseWriter, r *http.Request) {
-	//ctx := appengine.NewContext(r)
 	ctx := context.Background()
 	id, err := strconv.Atoi(strings.TrimPrefix(r.URL.Path, "/user/"))
 	if err != nil {
@@ -154,7 +139,6 @@ func updateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	users := make([]*User, 0)
 	q := datastore.NewQuery("User").Filter("UserID =", id)
-	// have to use a slice to save the result? or have to use getall?
 	keys, err := dsClient.GetAll(ctx, q, &users)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusUnauthorized)
@@ -173,15 +157,3 @@ func updateHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
-
-// 	// Respond to App Engine and Compute Engine health checks.
-// 	// Indicate the server is healthy.
-// 	// r.Methods("GET").Path("/_ah/health").HandlerFunc(
-// 	// 	func(w http.ResponseWriter, r *http.Request) {
-// 	// 		w.Write([]byte("ok"))
-// 	// 	})
-
-// 	// Delegate all of the HTTP routing and serving to the gorilla/mux router.
-// 	// Log all requests using the standard Apache format.
-// 	// http.Handle("/", handlers.CombinedLoggingHandler(os.Stderr, r))
-// }
