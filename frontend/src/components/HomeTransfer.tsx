@@ -1,7 +1,21 @@
 import React from "react";
-import {Button, Modal, ButtonToolbar} from 'react-bootstrap'
+import {Button, Modal, ButtonToolbar} from 'react-bootstrap';
+import { Fab} from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: 200,
+    },
+  },
+}));
 
 function MyVerticallyCenteredModal(props) {
+  const classes = useStyles();
   return (
     <Modal
       {...props}
@@ -11,16 +25,33 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Transfer Money
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+          <form className={classes.root} noValidate autoComplete="off">
+            <div>
+              {/* <TextField required id="standard-required" label="From" defaultValue="SAVINGS" /> */}
+              <TextField required id="standard-required" label="From"/>
+              <TextField required id="standard-required" label="To"/>
+              <TextField required id="standard-required" label="Amount"/>
+              {/* <TextField
+                id="standard-number"
+                label="Number"
+                type="number"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              /> */}
+              <TextField id="standard-required" label="Note"/>
+              {/* <TextField
+                id="standard-helperText"
+                label="Helper text"
+                defaultValue="Default Value"
+                helperText="Some important text"
+              /> */}
+            </div>
+          </form>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -29,23 +60,21 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
+
 const Transfer: React.FC = () => {
-
   const [modalShow, setModalShow] = React.useState(false);
-
   return (
     <div>
       <h1>Transfer</h1>
-      <ButtonToolbar style={{justifyContent: 'center'}}>
-          <Button variant="primary" onClick={() => setModalShow(true)}>
-            More
-          </Button>
 
-          <MyVerticallyCenteredModal
+      <Fab color="primary" aria-label="add" style={{bottom: '0px'}}>
+        {/* <AddIcon onClick={() => setModalShow(true)}></AddIcon> */}
+        <AddIcon onClick={() => setModalShow(true)}></AddIcon>
+        <MyVerticallyCenteredModal
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
-        </ButtonToolbar>
+      </Fab>
     </div>
   );
 };
