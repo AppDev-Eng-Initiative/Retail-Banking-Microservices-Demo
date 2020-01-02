@@ -31,25 +31,10 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Body>
           <form className={classes.root} noValidate autoComplete="off">
             <div>
-              {/* <TextField required id="standard-required" label="From" defaultValue="SAVINGS" /> */}
               <TextField required id="standard-required" label="From"/>
               <TextField required id="standard-required" label="To"/>
               <TextField required id="standard-required" label="Amount"/>
-              {/* <TextField
-                id="standard-number"
-                label="Number"
-                type="number"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              /> */}
               <TextField id="standard-required" label="Note"/>
-              {/* <TextField
-                id="standard-helperText"
-                label="Helper text"
-                defaultValue="Default Value"
-                helperText="Some important text"
-              /> */}
             </div>
           </form>
       </Modal.Body>
@@ -69,7 +54,6 @@ const Transfer: React.FC = () => {
 
       <Fab color="primary" aria-label="add" style={{position: 'absolute', right: '0px',
                 bottom: '0px'}}>
-        {/* <AddIcon onClick={() => setModalShow(true)}></AddIcon> */}
         <AddIcon onClick={() => setModalShow(true)}></AddIcon>
         <MyVerticallyCenteredModal
             show={modalShow}

@@ -41,10 +41,6 @@ const App: React.FC = () => {
         </Menu>
 
         <Header></Header>
-        
-   
-        
-
 
         <Switch>
           <Route exact path="/">
