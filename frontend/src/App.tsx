@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 /* Import Views for Retail Banking App */
 import Home from "./views/home";
+import Transactions from "./views/transactions";
+import Transfer from "./views/transfer";
 import Login from "./views/login";
 import Menus from "./components/Menus";
 import Header from "./components/layout/Header";
@@ -20,7 +22,7 @@ const App: React.FC = () => {
             <Login></Login>
           </Route>
 
-          <Route path="/:userId?/home" render={(props) =>
+          <Route path="/home/:userId?" render={(props) =>
             <div>
               <Menus {...props} />
               <Header></Header>
@@ -32,14 +34,14 @@ const App: React.FC = () => {
             <div>
               <Menus {...props} />
               <Header></Header>
-              <Home></Home>
+              <Transfer></Transfer>
             </div>}>
           </Route>
           <Route path="/transactions"  render={(props) =>
             <div>
               <Menus {...props} />
               <Header></Header>
-              <Home></Home>
+              <Transactions></Transactions>
             </div>}>
           </Route>
         </Switch>

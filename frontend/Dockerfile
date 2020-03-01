@@ -4,6 +4,8 @@ WORKDIR .
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY . ./
+RUN touch .env.production
+RUN echo 'REACT_APP_DOMAIN=http://localhost' >> .env.production
 RUN yarn build
 #copy artifacts for thin image
 FROM nginx:alpine
