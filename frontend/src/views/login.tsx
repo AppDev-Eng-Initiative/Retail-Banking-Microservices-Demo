@@ -14,7 +14,7 @@ class Login extends Component<{}, { username: string, password: string }> {
     }
 
     handleClick(event) {
-        var apiBaseUrl = "http://localhost/user/";
+        var apiBaseUrl = process.env["REACT_APP_DOMAIN"] + "/user/";
         // var self = this;
         // var payload = {
         //     "email": this.state.username,

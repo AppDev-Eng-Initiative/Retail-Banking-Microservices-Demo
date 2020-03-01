@@ -35,7 +35,7 @@ class Menus extends React.Component<PropsType> {
   }
 
   componentDidMount() {
-    fetch("http://localhost/user/" + this.props.match.params.userId)
+    fetch(process.env["REACT_APP_DOMAIN"] + "/user/" + this.props.match.params.userId)
       .then(response => response.json())
       .then(response => this.setState({
         name: response['Username'],
